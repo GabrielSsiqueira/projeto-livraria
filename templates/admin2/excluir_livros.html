@@ -1,0 +1,26 @@
+{% extends 'base_adm.html' %}
+
+{% block title %}
+  Excluir Livros
+{% endblock %}
+
+{% block css %}{% endblock %}
+
+{% block conteudo %}
+ 
+    <div class="dashboard">
+        <h1>Excluir Livros</h1>        
+    
+        <p>Tem certeza de que deseja excluir o livro "{{ livros['nome'] }}"?</p>
+        
+        <form method="POST">
+            <button type="submit" class="btn btn-danger">Confirmar Exclusão</button>
+        </form>
+        <br><br>
+        <!-- Botão de retorno para outra página -->
+        <a href="{{ url_for('listar_livros') }}" class="btn btn-secondary">Cancelar</a>
+    </div>
+
+{% endblock %}
+
+{% block js %}{% endblock %}

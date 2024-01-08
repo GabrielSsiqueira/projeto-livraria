@@ -1,0 +1,36 @@
+{% extends 'base_adm.html' %}
+
+{% block title %}
+  Listar Categorias
+{% endblock %}
+
+{% block css %}{% endblock %}
+
+{% block conteudo %}
+ 
+ <h2>Listar Categorias</h2>
+         <table class="table table-striped table-hover table-light">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for categorias in categorias %}
+                <tr>
+                    <td>{{ categorias['nome'] }}</td>
+                    <td>{{ categorias['descricao'] }}</td>
+                    <td><a href="{{ url_for('editar_categoria', id=categorias['id']) }}" class="btn btn-info">Editar</a></td>
+                    <td><a href="{{ url_for('excluir_categoria', id=categorias['id']) }}" class="btn btn-danger">Excluir</a></td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+{% endblock %}
+
+{% block js %}{% endblock %}

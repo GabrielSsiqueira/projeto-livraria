@@ -1,0 +1,54 @@
+{% extends 'base_adm.html' %}
+
+{% block title %}
+  Editar Livros
+{% endblock %}
+
+{% block css %}{% endblock %}
+
+{% block conteudo %}
+ 
+ <h2>Editar Livros</h2>
+   <form method="POST" enctype="multipart/form-data" class="mt-3">
+    <div class="mb-3">
+        <label for="nome_livros" class="form-label">Nome do Livro:</label>
+        <input type="text" id="nome_livros" name="nome_livros" value="{{ livros['nome'] }}" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição:</label>
+        <input type="text" id="descricao" name="descricao" value="{{ livros['descricao'] }}" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="quantidade" class="form-label">Quantidade:</label>
+        <input type="text" id="quantidade" class="form-control" name="quantidade" value="{{ livros['quantidade']}}" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="preco" class="form-label">Preço:</label>
+        <input type="text" id="preco" class="form-control" name="preco" value="{{ livros['preco']}}" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="categoria_id" class="form-label">ID:</label>
+        <input type="text" id="categoria_id" name="categoria_id" value="{{ livros['categoria_id'] }}" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="imagem_atual" class="form-label">Imagem Atual:</label>
+        <img src="data:image/jpeg;base64,{{ livros['imagem'] }}" class="img-fluid" alt="Imagem Atual">
+    </div>
+
+    <div class="mb-3">
+        <label for="imagem" class="form-label">Nova Imagem (opcional):</label>
+        <input type="file" id="imagem" name="imagem" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+</form>
+
+
+{% endblock %}
+
+{% block js %}{% endblock %}

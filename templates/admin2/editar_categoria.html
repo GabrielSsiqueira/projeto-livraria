@@ -1,0 +1,35 @@
+{% extends 'base_adm.html' %}
+
+{% block title %}
+  Editar Categoria
+{% endblock %}
+
+{% block css %}{% endblock %}
+
+{% block conteudo %}
+ 
+ <h2>Editar Categoria</h2>
+   <form method="POST" enctype="multipart/form-data" class="mt-3">
+    <div class="mb-3">
+        <label for="nome_categoria" class="form-label">Nome da Categoria:</label>
+        <input type="text" id="nome_categoria" name="nome_categoria" value="{{ categorias['nome'] }}" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição:</label>
+        <input type="text" id="descricao" name="descricao" value="{{ categorias['descricao'] }}" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="imagem_atual" class="form-label">Imagem Atual:</label>
+        <img src="data:image/jpeg;base64,{{ categorias['imagem'] }}" class="img-fluid" alt="Imagem Atual">
+    </div>
+    <div class="mb-3">
+        <label for="imagem" class="form-label">Nova Imagem (opcional):</label>
+        <input type="file" id="imagem" name="imagem" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+</form>
+
+
+{% endblock %}
+
+{% block js %}{% endblock %}

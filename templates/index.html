@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <main>
+
+
+     
+      {% for categorias in categorias %}
+       
+        <div class="category-card">
+            <img src="data:image/jpeg;base64,{{ categorias['imagem'] }}" alt="Categoria 1">
+
+            <h3><a href="#">{{categorias['nome']}}</a></h3>
+               <div class="intro"><a href="comprar">comprar</a></div>
+             <p>{{categorias['descricao']}} </p>  
+      
+            <a href="{{ url_for('listar', id=categorias['id'])}}" class="btn">Ver Mais</a>
+        </div>
+        
+      {% endfor%}   
+       
+
+    </main>
+ 
+{% endblock %}

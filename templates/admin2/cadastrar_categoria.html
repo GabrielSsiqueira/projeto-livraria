@@ -1,0 +1,33 @@
+{% extends 'base_adm.html' %}
+
+{% block title %}
+  Cadastrar Categoria
+{% endblock %}
+
+{% block css %}{% endblock %}
+
+{% block conteudo %}
+ 
+ <h2>Cadastrar Categoria</h2>
+   <form method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="nome_categoria" class="form-label">Nome da Categoria:</label>
+            <input type="text" id="nome_categoria" class="form-control" name="nome_categoria" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="descricao" class="form-label">Descrição:</label>
+            <input type="text" id="descricao" class="form-control" name="descricao" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="imagem" class="form-label">Imagem:</label>
+            <input type="file" id="imagem" class="form-control" name="imagem">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+
+{% endblock %}
+
+{% block js %}{% endblock %}

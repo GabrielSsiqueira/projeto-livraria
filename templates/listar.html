@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <main>
+
+
+     
+      {% for livros in livros %}
+       
+      <div class="category-card">
+          <img src="data:image/jpeg;base64,{{ livros['imagem'] }}" alt="livros">
+
+          <h3><a href="#">{{livros['nome']}}</a></h3>
+             <div class="intro"><a href="#">{{ livros['nome'] }}</a></div>
+           <p>{{livros['descricao']}} </p>  
+
+      </div>
+      
+    {% endfor%}   
+     
+
+  </main>
+{% endblock %}

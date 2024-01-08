@@ -1,0 +1,56 @@
+<li class="sidebar-item"> 
+  <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/dashboard" aria-expanded="false">
+      <i class="mdi mdi-chart-bar"></i>
+      <span class="hide-menu">Dashboard</span>
+  </a>
+</li>
+
+
+
+<!-- Categorias -->
+<li class="sidebar-item"> 
+  <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+      <i class="mdi mdi-view-dashboard"></i>
+      <span class="hide-menu">Categoria</span>
+  </a>
+  <ul aria-expanded="false" class="collapse  first-level">
+    <li class="sidebar-item"><a href="{{ url_for('listar_categorias') }}" class="sidebar-link"><i class="mdi mdi-format-list-bulleted"></i><span class="hide-menu"> Listar </span></a></li>
+    <li class="sidebar-item"><a href="{{ url_for('cadastrar_categoria') }}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Cadastrar </span></a></li>
+  </ul>
+</li>
+
+<!-- Livros -->
+<li class="sidebar-item"> 
+  <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+    <i class="mdi mdi-book"></i>
+    <span class="hide-menu">Livros</span>
+  </a>
+  <ul aria-expanded="false" class="collapse  first-level">
+    <li class="sidebar-item"><a href="{{ url_for('listar_livros') }}" class="sidebar-link"><i class="mdi mdi-format-list-bulleted"></i><span class="hide-menu"> Listar </span></a></li>
+    <li class="sidebar-item"><a href="{{ url_for('cadastrar_livro') }}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Cadastrar </span></a></li>
+  </ul>
+</li>
+
+<!-- Dúvidas -->
+<li class="sidebar-item"> 
+  <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ url_for('listar_contatos')}}" aria-expanded="false">
+    <i class="mdi mdi-help-circle"></i>
+    <span class="hide-menu">Dúvidas</span>
+  </a>
+</li>
+
+<!-- Reservas -->
+<li class="sidebar-item"> 
+  <a class="sidebar-link waves-effect waves-dark" class="sidebar-link" href="#" aria-expanded="false">
+    <i class="mdi mdi-shopping"></i>
+    <span class="hide-menu">Preços</span>
+  </a>
+</li>
+
+<!-- Logout -->
+<li class="sidebar-item"> 
+  <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/" aria-expanded="false">
+    <i class="mdi mdi-exit-to-app"></i>
+    <span class="hide-menu">Logout</span>
+  </a>
+</li>

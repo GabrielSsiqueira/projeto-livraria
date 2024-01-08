@@ -1,0 +1,26 @@
+{% extends 'base_adm.html' %}
+
+{% block title %}
+  Excluir Contato
+{% endblock %}
+
+{% block css %}{% endblock %}
+
+{% block conteudo %}
+ 
+    <div class="dashboard">
+        <h1>Excluir Contato</h1>        
+    
+        <p>Tem certeza de que deseja excluir o contato "{{ contatos['nome'] }}"?</p>
+        
+        <form method="POST">
+            <button type="submit" class="btn btn-danger">Confirmar Exclusão</button>
+        </form>
+        <br><br>
+        <!-- Botão de retorno para outra página -->
+        <a href="{{ url_for('listar_contatos') }}" class="btn btn-secondary">Cancelar</a>
+    </div>
+
+{% endblock %}
+
+{% block js %}{% endblock %}

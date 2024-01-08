@@ -1,0 +1,26 @@
+{% extends 'base_adm.html' %}
+
+{% block title %}
+  Excluir Categoria
+{% endblock %}
+
+{% block css %}{% endblock %}
+
+{% block conteudo %}
+ 
+    <div class="dashboard">
+        <h1>Excluir Categoria</h1>        
+    
+        <p>Tem certeza de que deseja excluir a categoria "{{ categorias['nome'] }}"?</p>
+        
+        <form method="POST">
+            <button type="submit" class="btn btn-danger">Confirmar Exclusão</button>
+        </form>
+        <br><br>
+        <!-- Botão de retorno para outra página -->
+        <a href="{{ url_for('listar_categorias') }}" class="btn btn-secondary">Cancelar</a>
+    </div>
+
+{% endblock %}
+
+{% block js %}{% endblock %}

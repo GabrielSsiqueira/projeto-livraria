@@ -1,0 +1,73 @@
+{% extends 'base_adm.html' %}
+
+{% block title %}
+  Título de Teste
+{% endblock %}
+
+{% block css %}{% endblock %}
+
+{% block conteudo %}
+
+  <h2>Totais de Livros</h2>
+  
+    <div class="right" id="piechart" style="width: 900px; height: 500px;"></div>
+  
+  <br><br><br>
+  <h2>Totais de Vendas</h2>
+  
+    <div  class="left" id="piechart2" style="width: 900px; height: 500px;"></div>
+
+
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawCharts);
+
+function drawCharts(){
+  drawChart();
+  drawChart2();
+}
+function drawChart() {
+
+  var data = google.visualization.arrayToDataTable([
+    ['Categoria', 'Quantidade'],
+    ['Ficção',     4],
+    ['Aventura',      2],
+    ['Religioso',  15],
+    ['Infantil', 10],
+    ['Geopolitica',    5]
+  ]);
+
+  var options = {
+    title: 'Categoria No Estoque'
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+  chart.draw(data, options);
+}
+
+function drawChart2() {
+
+  var data = google.visualization.arrayToDataTable([
+    ['Categoria', 'Quantidade'],
+    ['Ficção',     4],
+    ['Aventura',      2],
+    ['Religioso',  15],
+    ['Infantil', 10],
+    ['Geopolitica',    5]
+  ]);
+
+  var options = {
+    title: 'Categoria No Estoque'
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('piechart2'));
+
+  chart.draw(data, options);
+}
+</script>
+{% endblock %}

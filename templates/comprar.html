@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='comprar.css') }}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<body id="body">
+    <header id="header">
+        <span id="span">Carrinho de Compras <b>Livraria Renascer</b></span>
+    </header>
+    <main id="main">
+        <div class="page-title container">Seu carrinho</div>
+        <div class="content">
+            <section>
+                <table class="table table-striped table-hover table-light" id="table">
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Preço</th>
+                            <th>Quantidade</th>
+                            <th>Total</th>
+                            <th>~</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for livros in livros %}
+                        <tr>
+                            <td>
+                                <div class="product">
+                                    <img src="data:image/jpeg;base64,{{ livros['imagem'] }}" id="imagem" alt="Livros">
+                                    <div class="info">
+                                        <div class="name"><p>{{ livros['nome'] }}</p></div>
+                                        <div class="category">{{ livros['descricao'] }}</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td id="preco">R${{ livros['preco'] }}</td>
+                            <!-- Seu HTML -->
+                            <td>
+                                <div class="qty">
+                                    <button class="btn-minus" id="button" onclick="decrementarQuantidade(this)">
+                                        <i class="bx bx-minus"></i></button>
+                                    <span class="quantidade">{{ livros['quantidade'] }}</span>
+                                    <button class="btn-plus" id="button" onclick="incrementarQuantidade(this)">
+                                        <i class="bx bx-plus"></i></button>
+                                </div>
+                            </td>
+                            <td class="subtotal" id="total">R$0.00</td>
+                            <th><button type="button" class="remove" onclick="removerItem(this)">
+                                    <i class="bx bx-x"></i></button></th>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </section>
+            <aside>
+                <div class="box" id="resumoCompra">
+                    <header>Resumo da compra</header>
+                    <div class="info">
+                        <div><span>Sub-total</span><span id="sub-total">R$0.00</span></div>
+                        <div><span>Frete</span><span>Gratuito</span></div>
+                        <div>
+                            <button id="button1">
+                                Adicionar Cupom de desconto
+                                <i class="bx bx-right-arrow-alt" id="i"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <footer id="footer" class="info">
+                        <span>Total</span>
+                        <span id="resumo">R$0.00</span>
+                    </footer>
+                </div>
+                
+                <button id="button-finalizar" onclick="finalizarCompra()">Finalizar Compra</button>
+            </aside>
+        </div>
+    </main>
+
+</body>
+<script src="{{ url_for('static', filename='js/carrinho.js') }}"></script>
+{% endblock %}
